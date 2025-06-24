@@ -1,0 +1,114 @@
+/* General Styles */
+body {
+  background-color: #f4f4f9;
+  color: #333;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Bets Section */
+#bets-container {
+  margin-bottom: 2rem;
+}
+
+.bet-item {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bet-item h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.bet-item p {
+  margin: 0.25rem 0;
+}
+
+/* Wager Form Section */
+#place-wager {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#place-wager h2 {
+  margin-top: 0;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+form input, form select, form button {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+form button {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #45a049;
+}
+
+/* Wagers Section */
+#wagers-container {
+  margin-top: 2rem;
+}
+
+.wager-item {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.wager-item p {
+  margin: 0.25rem 0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #f4f4f4;
+  color: #666;
+  margin-top: 2rem;
+}
