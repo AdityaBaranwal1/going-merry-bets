@@ -65,5 +65,8 @@ node_modules/
 # dotenv environment variables file
 .env
 
+# Firebase Admin SDK credentials
+going-merry-bets-firebase-adminsdk-f6a8b-90174693b5.json
+
 # dataconnect generated files
 .dataconnect

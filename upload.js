@@ -1,3 +1,5 @@
+/* eslint-env node */
+/* eslint-disable @typescript-eslint/no-require-imports, no-undef */
 const admin = require("firebase-admin");
 const fs = require("fs");
 
@@ -19,8 +21,29 @@ async function uploadBets() {
   const collectionRef = db.collection("bets");
 
   betsData.forEach((bet) => {
+    // Validate and normalize odds
+    let odds_for, odds_against;
+    if (bet.odds && typeof bet.odds.for === "number" && typeof bet.odds.against === "number") {
+      odds_for = bet.odds.for;
+      odds_against = bet.odds.against;
+    } else if (typeof bet.odds_for === "number" && typeof bet.odds_against === "number") {
+      odds_for = bet.odds_for;
+      odds_against = bet.odds_against;
+    } else {
+      console.warn("Skipping bet due to invalid odds:", bet);
+      return;
+    }
+    if (!bet.bet || typeof bet.bet !== "string" || bet.bet.length < 5) {
+      console.warn("Skipping bet due to invalid bet name:", bet);
+      return;
+    }
     const docRef = collectionRef.doc(); // Auto-generate document IDs
-    batch.set(docRef, bet);
+    batch.set(docRef, {
+      bet: bet.bet,
+      odds_for,
+      odds_against,
+      status: bet.status ?? "Pending"
+    });
   });
 
   await batch.commit();
